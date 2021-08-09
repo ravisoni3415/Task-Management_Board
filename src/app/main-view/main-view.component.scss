@@ -30,6 +30,7 @@
     .board-columns {
       display: flex;
       flex-grow: 1;
+      justify-content: center;
 
       .board-column {
         display: flex;
