@@ -1,0 +1,53 @@
+header {
+  display: grid;
+  grid-template-columns: 80% auto;
+
+  .nav-with-border {
+    border-bottom: 3px solid #0d6ffe;
+    display: grid;
+    grid-template-columns: 12% auto;
+    height: 3.5rem;
+
+    .all-project--container {
+      color: #8c9bac;
+      font-size: 14px;
+    }
+  }
+
+  .all-project--title {
+    font-size: 18px;
+    font-weight: bold;
+
+    i{
+      font-size: 13px;
+    }
+  }
+}
+
+.user-avtar{
+  height: 32px; 
+  border-radius: 7px; 
+  border: 1px solid #ded4d4;
+}
+
+@media screen and (max-width: 764px) {
+  header {
+    display: grid;
+    grid-template-columns: 100%;
+
+    .nav-with-border {
+      border-bottom: 3px solid #0d6ffe;
+      display: grid;
+      grid-template-columns: 1% auto;
+      height: 3.5rem;
+    }
+  }
+
+  .all-project--heading {
+    display: none;
+  }
+
+  .my-action-container {
+    margin-top: 12px;
+  }
+}

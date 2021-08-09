@@ -1,0 +1,33 @@
+#sidebar {
+  width: 3rem;
+}
+#main-header {
+  flex-grow: 1;
+  padding-left: 3rem;
+  width: 100%;
+}
+.plus-btn-container {
+  bottom: 15px;
+  right: 15px;
+  position: fixed;
+
+  .plus-btn {
+    outline: 0;
+    border: 0;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    background-color: #0068ff;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    box-shadow: rgb(0 0 0) 0px 3px 3px 0px;
+  }
+}
+
+.modal-body {
+  font-size: 12px;
+}

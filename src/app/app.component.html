@@ -1,0 +1,69 @@
+<div class="d-flex">
+  <div id="sidebar" class="position-fixed">
+    <app-left-panel></app-left-panel>
+  </div>
+  <section id="main-header">
+    <app-header></app-header>
+    <app-main-view [newTodo]="newTodoItem"></app-main-view>
+  </section>
+</div>
+<div class="plus-btn-container" (click)="open(mymodal)">
+  <button class="plus-btn">+</button>
+</div>
+<router-outlet></router-outlet>
+<!-- Modal -->
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h6 class="modal-title" id="modal-basic-title">Create Task</h6>
+    <button
+      type="button"
+      class="btn-close btn-sm"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="title-name" class="col-form-label">Title:</label>
+      <input
+        type="text"
+        [(ngModel)]="title_name"
+        class="form-control"
+        id="title-name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="discription-text" class="col-form-label">Description:</label>
+      <textarea
+        class="form-control"
+        [(ngModel)]="description"
+        id="description-text"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="user-name" class="col-form-label">Username:</label>
+      <input
+        type="text"
+        [(ngModel)]="username"
+        class="form-control"
+        id="user-name"
+      />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-primary btn-sm"
+      (click)="addTodo(modal)"
+    >
+      Add
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary btn-sm"
+      (click)="modal.dismiss('Cross click')"
+    >
+      Cancel
+    </button>
+  </div>
+</ng-template>

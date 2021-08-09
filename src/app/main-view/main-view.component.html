@@ -1,0 +1,117 @@
+<header class="d-flex align-items-center justify-content-around mt-3">
+  <div class="ms-4">
+    <i class="fa fa-star-o" aria-hidden="true"></i>
+    <span
+      class="ms-2 rounded p-1 people-label"
+    >
+      <i class="fa fa-user-o" aria-hidden="true"></i> 6 people
+    </span>
+    <span
+      class="ms-2 rounded p-1 left-days-label"
+    >
+      <i class="fa fa-clock-o" aria-hidden="true"></i> 2 days left
+    </span>
+  </div>
+  <div
+    class="d-flex ms-auto align-items-center pe-4 my-task my-task-label"
+  >
+    <span>Show my task only</span>
+    <i class="fa fa-toggle-on mt-1 ps-1" aria-hidden="true"></i>
+  </div>
+</header>
+<div class="root">
+  <div class="board">
+    <div class="board-wrapper">
+      <div class="board-columns" cdkDropListGroup>
+        <div class="board-column" *ngFor="let column of board.columns">
+          <div class="column-title d-flex">
+            <span>
+              {{ column.name }}
+            </span>
+            <span class="ellipssis-icon">
+              <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div
+            class="tasks-container"
+            cdkDropList
+            [cdkDropListData]="column.tasks"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div
+              class="task"
+              *ngFor="let item of column.tasks; let i = index"
+              cdkDrag
+            >
+              <i
+                class="fa fa-times float-end delete-icon"
+                aria-hidden="true"
+                (click)="deleteTask(column.tasks, i)"
+                title="Delete task"
+              ></i>
+              <div
+                [ngClass]="item['title_color']"
+                class="task-title gloabl-border"
+              >
+                {{ item["title"] }}
+              </div>
+              <div *ngIf="item['bgimage'].length > 0">
+                <img [src]="item['bgimage']" id="bgimage" height="140px" />
+              </div>
+              <div class="d-flex mt-2">
+                <span
+                  *ngIf="item['notification_date'].length > 0"
+                  class="icon-margin global-bg"
+                  [ngClass]="
+                    item['notification_color'] == 'gray-bg'
+                      ? 'gray-bg'
+                      : 'red-bg'
+                  "
+                >
+                  <i class="fa fa-bell-o" aria-hidden="true"></i>
+                  <span class="item-padding">
+                    {{ item["notification_date"] }}
+                  </span>
+                </span>
+                <span
+                  *ngIf="item['task_date'].length > 0"
+                  class="global-bg green-bg icon-margin"
+                >
+                  <i class="fa fa-check fa-inverse" aria-hidden="true"></i>
+                  <span class="item-padding">{{ item["task_date"] }}</span>
+                </span>
+                <span
+                  *ngIf="item['message_count'] > 0"
+                  class="gray-bg icon-margin global-bg"
+                >
+                  <i class="fa fa-comment-o" aria-hidden="true"></i>
+                  <span class="item-padding">
+                    {{ item["message_count"] }}
+                  </span>
+                </span>
+                <span
+                  *ngIf="item['attachment_count'] > 0"
+                  class="gray-bg icon-margin global-bg"
+                >
+                  <i class="fa fa-paperclip" aria-hidden="true"></i>
+                  <span class="item-padding">
+                    {{ item["attachment_count"] }}
+                  </span>
+                </span>
+                <span class="ms-auto d-flex">
+                  <span *ngFor="let data of usericons; let i = index">
+                    <img
+                      *ngIf="i < item['usericon']"
+                      [src]="data"
+                      height="25"
+                    />
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+#sidebar {
+  background-color: #0068ff;
+  height: 100vh;
+}
+#main-icon {
+  padding-top: 10px;
+}
+#content-icon {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-70%);
+}
+
+.access-icon {
+  padding: 10px 0;
+}
+
+.active-tab {
+  background: #0655c7;
+  padding: 7px;
+  border-radius: 6px;
+}
