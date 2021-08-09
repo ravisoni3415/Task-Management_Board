@@ -1,5 +1,33 @@
 # TaskManagement
 
+**Live demo here 👉 https://task-board-ravi.netlify.app/ **
+
+**Features**
+
+1. Responsive layout
+2. Drag and drop todo task to any section
+3. Delete task
+4. State management using localstorage
+5. Add new task model
+
+**Screenshots**
+
+1. large screen view
+![](src/assets/screenshots/large-screen-view.PNG)
+
+2. Task drag
+![](src/assets/screenshots/drag-task.png)
+
+3. Delete task
+![](src/assets/screenshots/delete-task.png)
+
+4. Mobile layout
+![](src/assets/screenshots/mobile-layout.png)
+
+5. Mobile layout add task
+
+![](src/assets/screenshots/mobile-layout-add-task.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
 
 ## Development server
