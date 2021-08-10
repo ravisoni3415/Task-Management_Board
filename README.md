@@ -22,6 +22,7 @@
 ![](src/assets/screenshots/delete-task.png)
 
 4. Mobile layout
+
 ![](src/assets/screenshots/mobile-layout.png)
 
 5. Mobile layout add task
